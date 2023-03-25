@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {margin:0;font-family:Arial}
+
+.topnav {
+  overflow: hidden;
+  background-color: #002457;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 17px;    
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.topnav a:hover, .dropdown:hover .dropbtn {
+  background-color: #555;
+  color: white;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child), .dropdown .dropbtn {
+    display: none;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .topnav.responsive .dropdown {float: none;}
+  .topnav.responsive .dropdown-content {position: relative;}
+  .topnav.responsive .dropdown .dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+/* The footer is fixed to the bottom of the page */
+
+footer{
+	position: fixed;
+	bottom: 0;
+}
+
+@media (max-height:800px){
+	footer { position: static; }
+	header { padding-top:40px; }
+}
+
+
+.footer-distributed{
+	background-color: #002457;
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: bold 16px sans-serif;
+	padding: 50px 50px 60px 50px;
+	margin-top: 80px;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+	display: inline-block;
+	vertical-align: top;
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left{
+	width: 30%;
+}
+
+.footer-distributed h3{
+	color:  #ffffff;
+	font: normal 36px 'Cookie', cursive;
+	margin: 0;
+}
+
+/* The company logo */
+
+.footer-distributed .footer-left img{
+	width: 30%;
+}
+
+.footer-distributed h3 span{
+	color:  #e0ac1c;
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links{
+	color:  #ffffff;
+	margin: 20px 0 12px;
+}
+
+.footer-distributed .footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+	text-decoration: none;
+	color:  inherit;
+}
+
+.footer-distributed .footer-company-name{
+	color:  #8f9296;
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+}
+
+/* Footer Center */
+
+.footer-distributed .footer-center{
+	width: 35%;
+}
+
+
+.footer-distributed .footer-center i{
+	background-color:  #33383b;
+	color: #ffffff;
+	font-size: 25px;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 42px;
+	margin: 10px 15px;
+	vertical-align: middle;
+}
+
+.footer-distributed .footer-center i.fa-envelope{
+	font-size: 17px;
+	line-height: 38px;
+}
+
+.footer-distributed .footer-center p{
+	display: inline-block;
+	color: #ffffff;
+	vertical-align: middle;
+	margin:0;
+}
+
+.footer-distributed .footer-center p span{
+	display:block;
+	font-weight: normal;
+	font-size:14px;
+	line-height:2;
+}
+
+.footer-distributed .footer-center p a{
+	color:  #e0ac1c;
+	text-decoration: none;;
+}
+
+
+/* Footer Right */
+
+.footer-distributed .footer-right{
+	width: 30%;
+}
+
+.footer-distributed .footer-company-about{
+	line-height: 20px;
+	color:  #92999f;
+	font-size: 13px;
+	font-weight: normal;
+	margin: 0;
+}
+
+.footer-distributed .footer-company-about span{
+	display: block;
+	color:  #ffffff;
+	font-size: 18px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons{
+	margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	background-color:  #33383b;
+	border-radius: 2px;
+
+	font-size: 20px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 35px;
+
+	margin-right: 3px;
+	margin-bottom: 5px;
+}
+
+/* Here is the code for Responsive Footer */
+/* You can remove below code if you don't want Footer to be responsive */
+
+
+@media (max-width: 880px) {
+
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-center,
+	.footer-distributed .footer-right{
+		display: block;
+		width: 100%;
+		margin-bottom: 40px;
+		text-align: center;
+	}
+
+	.footer-distributed .footer-center i{
+		margin-left: 0;
+	}
+
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: left;
+  background-color: #f1f1f1;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+  padding: 2px 10px;
+}
+
+.mfp-iframe-holder .mfp-content { max-width: 1200px !important; }
+
+</style>
+</head>
+<body>
+
+<div class="topnav" id="myTopnav">
+  <a href="/dev.html" class="active">Home</a>
+  <a href="/business">Our Business</a>
+  <div class="dropdown">
+    <button class="dropbtn">Our Company
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="/mission">Mission, Vision and Values</a>
+      <a href="/boards">Board of Directors, Management Team and Executive Officers</a>
+      <a href="/org-chart">Organizational Chart</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button class="dropbtn">Corporate Governance
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="/manual-corp">Manual on Corporate Governance</a>
+      <a href="/annual-corp">Annual Corporate Governance Report (ACGR)</a>
+    </div>
+  </div>
+
+ <div class="dropdown">
+    <button class="dropbtn">Company Disclosures
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="/sec-filings">SEC Filings</a>
+      <a href="/notice-annual">Notice of Annual or Special Stockholders' Meetings</a>
+      <a href="/minutes">Minutes of all General or Special Stockholders' Meetings</a>
+      <a href="/other-disclosures">Other Disclosures to SEC, PSE and Other Pertinent Agencies</a>
+    </div>
+  </div>
+
+  <a href="business.html">Press Materials / News</a>
+
+  <div class="dropdown">
+    <button class="dropbtn">Investor Relations
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="/investor">Investor Relations Programs</a>
+      <a href="/share-info">Share Information</a>
+    </div>
+  </div>
+<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+<div style="padding-left:16px">
+<br><br>
+ <center> <h2>SEC Filings</h2></center>
+</div>
+
+<p>
+<a target="_blank" href="../data/STN-MoM2012ASM.pdf" onclick="open(this.href, this.target, 'width=900, height=700, top=400, left=350'); return false;">Minutes of the Annual Meeting (2012)</a>
+<div class="card" style="width: 18rem;">
+  <div class="card-header">
+    SEC Form 17-A (Annual Report)
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><a href="/data/Annual-Report-2012.pdf" onclick="open(this.href, this.target, 'width=900, height=650, top=400, left=350'); return false;"> December 31, 2012</a></li>
+    <li class="list-group-item"><a href="/data/STN-17A-2014.pdf" onclick="open(this.href, this.target, 'width=900, height=650, top=400, left=350'); return false;"> December 31, 2014</a></li>
+    <li class="list-group-item"><a href="/data/STN-17A-2015.pdf" onclick="open(this.href, this.target, 'width=900, height=650, top=400, left=350'); return false;"> December 31, 2015</a></li>
+    <li class="list-group-item"><a href="/data/STN-17A-2016.pdf" onclick="open(this.href, this.target, 'width=900, height=650, top=400, left=350'); return false;"> December 31, 2016</a></li>
+    <li class="list-group-item"><a href="/data/STN-MoM2012ASM.pdf" onclick="open(this.href, this.target, 'width=900, height=650, top=400, left=350'); return false;"> December 31, 2017</a></li>
+  </ul>
+</div>
+</p>
+
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <h3>SEC Form 17-A (Annual Report)</h3>     
+      <a href="../data/Annual-Report-2012.pdf" onclick="open(this.href, this.target, 'width=900, height=650, top=400, left=350'); return false;">December 31, 2012</a><br>
+      <a href="../data/STN-17A-2014.pdf" onclick="open(this.href, this.target, 'width=900, height=650, top=400, left=350'); return false;">December 31, 2014</a><br>
+      <a href="../data/STN-17A-2015.pdf" onclick="open(this.href, this.target, 'width=900, height=650, top=400, left=350'); return false;">December 31, 2015</a><br>
+      <a href="../data/STN-17A-2016.pdf" onclick="open(this.href, this.target, 'width=900, height=650, top=400, left=350'); return false;">December 31, 2016</a><br>
+      <a href="../data/STN-MoM2012ASM.pdf" onclick="open(this.href, this.target, 'width=900, height=650, top=400, left=350'); return false;">December 31, 2017</a><br><br>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <h3>SEC Form 17-Q (Quarterly Report)</h3>
+      March 31, 2014 <a href="/data/Form-17-Q-March-31-2014.pdf" onclick="open(this.href, this.target, 'width=900, height=650, top=400, left=350'); return false;" >(1)</a>  <a href="/data/Form-17-Q-March-31.pdf" onclick="open(this.href, this.target, 'width=900, height=650, top=400, left=350'); return false;">(2)</a><br>
+      June 30, 2014 <a href="/data/Form-17-Q-June-30-2014.pdf" onclick="open(this.href, this.target, 'width=900, height=650, top=400, left=350'); return false;">(1)</a>  <a href="/data/Form-17-Q-June-30.pdf" onclick="open(this.href, this.target, 'width=900, height=650, top=400, left=350'); return false;">(2)</a><br>
+      September 30, 2014 <a href="/data/Form-17-Q-Sep-30-2014.pdf" onclick="open(this.href, this.target, 'width=900, height=650, top=400, left=350'); return false;">(1)</a>  <a href="/data/Form-17-Q-Sep-30.pdf" onclick="open(this.href, this.target, 'width=900, height=650, top=400, left=350'); return false;">(2)</a><br>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+      <h3>SEC Form 17-C (Current Report)</h3>
+      <a href="../data/STN-17C-15June2017.pdf" onclick="open(this.href, this.target, 'width=900, height=650, top=400, left=350'); return false;">June 15, 2017</a><br>
+      <a href="../data/SEC-Form-17-C-2017-ASM.pdf" onclick="open(this.href, this.target, 'width=900, height=650, top=400, left=350'); return false;">July 11, 2017</a><br>
+      <a href="../data/STN-17C-27Feb2018.pdf" onclick="open(this.href, this.target, 'width=900, height=650, top=400, left=350'); return false;">February 27, 2018</a><br>
+      <a href="../data/STN-17C-28May2018.pdf" onclick="open(this.href, this.target, 'width=900, height=650, top=400, left=350'); return false;">May 28, 2018</a><br>
+      <a href="../data/STN-17C-14June2018.pdf" onclick="open(this.href, this.target, 'width=900, height=650, top=400, left=350'); return false;">June 14, 2018</a><br>
+      <a href="../data/STN-17C-22June2018.pdf" onclick="open(this.href, this.target, 'width=900, height=650, top=400, left=350'); return false;">June 22, 2018</a><br>
+      <a href="../data/STN-17C-25June2018.pdf" onclick="open(this.href, this.target, 'width=900, height=650, top=400, left=350'); return false;">June 25, 2018</a><br>
+      <a href="../data/STN-17C-1Aug2018.pdf" onclick="open(this.href, this.target, 'width=900, height=650, top=400, left=350'); return false;">August 01, 2018</a><br>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+      <h3>SEC Form 20-IS (Information Statement)</h3>
+      <a href="../data/Form-20-is-Dec-26-2013.pdf" onclick="open(this.href, this.target, 'width=900, height=650, top=400, left=350'); return false;">December 26, 2013</a><br>
+      <a href="../data/SEC-FILING-20-IS.pdf" onclick="open(this.href, this.target, 'width=900, height=650, top=400, left=350'); return false;">June 20, 2014</a><br>
+    </div>
+  </div>
+  <p>
+ 
+  <div class="column">
+    <div class="card">
+       <h3>SEC Form 23-A/B (Statement of Beneficial Ownership)</h3>
+       <h4>General Information Sheet</h4>
+        <a href="../data/SEC-FILING-20-IS.pdf" onclick="open(this.href, this.target, 'width=900, height=650, top=400, left=350'); return false;">List of Top 100 Dec 2015</a><br>
+        <a href="../data/STN-PSEDisclosureForm17-18-(LtAdvisement2015).pdf" onclick="open(this.href, this.target, 'width=900, height=650, top=400, left=350'); return false;">PSE DISCLOSURE FORM 17-18 (2015)</a><br>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <h3>SEC FORM 17-C</h3>
+      <a href="/data/STN-SECForm17-C(2011).pdf" onclick="open(this.href, this.target, 'width=900, height=650, top=400, left=350'); return false;"> - 2011</a><br>
+      <a href="/data/STN-SECForm17-C(2014).pdf" onclick="open(this.href, this.target, 'width=900, height=650, top=400, left=350'); return false;"> - 2014</a><br>
+      <a href="/data/STN-SECForm17-C(2015).pdf" onclick="open(this.href, this.target, 'width=900, height=650, top=400, left=350'); return false;"> - 2015</a><br>
+      <a href="/data/STN-SECForm17-C(Noticeof2014ASM).pdf" onclick="open(this.href, this.target, 'width=900, height=650, top=400, left=350'); return false;"> - Notice 2014 ASM</a><br>
+      <a href="/data/STN-SECForm17-C(Noticeof2015ASM).pdf" onclick="open(this.href, this.target, 'width=900, height=650, top=400, left=350'); return false;"> - Notice 2015 ASM</a><br>
+      <a href="/data/STN-SECForm17-C(Resultsof2014ASM).pdf" onclick="open(this.href, this.target, 'width=900, height=650, top=400, left=350'); return false;"> - Results of 2014 ASM</a><br>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <h3>2016 SEC FILINGS</h3>
+      <a href="/data/STNAnnualReport31Dec2015stampedreceivedbySEC.pdf" onclick="open(this.href, this.target, 'width=900, height=650, top=400, left=350'); return false;">Annual Report</a><br>
+      <a href="/data/STN2016GIS.pdf" onclick="open(this.href, this.target, 'width=900, height=650, top=400, left=350'); return false;">General Information Sheet</a><br>
+      <a href="/data/STNMoMBoDSpecial5Apr2016.pdf" onclick="open(this.href, this.target, 'width=900, height=650, top=400, left=350'); return false;">Minutes of Meeting</a><br>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <h3>PSE Disclosures</h3>
+      <a href="/data/STNAnnualReport31Dec2015stampedrecvedbySEC.pdf" onclick="open(this.href, this.target, 'width=900, height=650, top=400, left=350'); return false;">PSE FORM 4-24</a><br>
+      <a href="/data/STNAnnualReport31Dec2015stampedrecvedbySEC.pdf" onclick="open(this.href, this.target, 'width=900, height=650, top=400, left=350'); return false;">PSE FORM 4-25</a><br>
+      <a href="/data/STNAnnualReport31Dec2015stampedrecvedbySEC.pdf" onclick="open(this.href, this.target, 'width=900, height=650, top=400, left=350'); return false;">PSE FORM 7-1</a><br>
+      <a href="/data/STNAnnualReport31Dec2015stampedrecvedbySEC.pdf" onclick="open(this.href, this.target, 'width=900, height=650, top=400, left=350'); return false;">PSE FORM 17-1</a><br>
+      <a href="#" onclick="open(this.href, this.target, 'width=900, height=650, top=400, left=350'); return false;">PSE FORM 17-2</a><br>
+      <a href="/data/STNAnnualReport31Dec2015stampedrecvedbySEC.pdf" onclick="open(this.href, this.target, 'width=900, height=650, top=400, left=350'); return false;">- 1st QUARTER</a><br>
+      <a href="/data/STNAnnualReport31Dec2015stampedrecvedbySEC.pdf" onclick="open(this.href, this.target, 'width=900, height=650, top=400, left=350'); return false;">- 2nd QUARTER</a><br>
+      <a href="/data/STNAnnualReport31Dec2015stampedrecvedbySEC.pdf" onclick="open(this.href, this.target, 'width=900, height=650, top=400, left=350'); return false;">- 3rd QUARTER</a><br>
+      <a href="#" onclick="open(this.href, this.target, 'width=900, height=650, top=400, left=350'); return false;">PSE FORM 17-5</a><br>
+      <a href="/data/STNAnnualReport31Dec2015stampedrecvedbySEC.pdf" onclick="open(this.href, this.target, 'width=900, height=650, top=400, left=350'); return false;">- 2016 DIS</a><br>
+      <a href="/data/STNAnnualReport31Dec2015stampedrecvedbySEC.pdf" onclick="open(this.href, this.target, 'width=900, height=650, top=400, left=350'); return false;">- 2016 PIS</a><br>
+      <a href="/data/STNAnnualReport31Dec2015stampedrecvedbySEC.pdf" onclick="open(this.href, this.target, 'width=900, height=650, top=400, left=350'); return false;">PSE FORM 17-6</a><br>
+      <a href="#" onclick="open(this.href, this.target, 'width=900, height=650, top=400, left=350'); return false;">PSE FORM 17-12</a><br>
+      <a href="/data/STNAnnualReport31Dec2015stampedrecvedbySEC.pdf" onclick="open(this.href, this.target, 'width=900, height=650, top=400, left=350'); return false;">– List of Top 100 Mar 2016</a><br>
+      <a href="/data/STNAnnualReport31Dec2015stampedrecvedbySEC.pdf" onclick="open(this.href, this.target, 'width=900, height=650, top=400, left=350'); return false;">– List of Top 100 Jun 2016</a><br>
+      <a href="/data/STNAnnualReport31Dec2015stampedrecvedbySEC.pdf" onclick="open(this.href, this.target, 'width=900, height=650, top=400, left=350'); return false;">– List of Top 100 Sept 2016</a><br>
+      <a href="/data/STNAnnualReport31Dec2015stampedrecvedbySEC.pdf" onclick="open(this.href, this.target, 'width=900, height=650, top=400, left=350'); return false;">– List of Top 100 Dec 2016</a><br>
+      <a href="/data/" onclick="open(this.href, this.target, 'width=900, height=650, top=400, left=350'); return false;">PSE FORM 17-18</a><br>
+      <a href="#" onclick="open(this.href, this.target, 'width=900, height=650, top=400, left=350'); return false;">PSE FORM POR-1</a><br>
+      <a href="/data/STNAnnualReport31Dec2015stampedrecvedbySEC.pdf" onclick="open(this.href, this.target, 'width=900, height=650, top=400, left=350'); return false;">– 1st QUARTER</a><br>
+      <a href="/data/STNAnnualReport31Dec2015stampedrecvedbySEC.pdf" onclick="open(this.href, this.target, 'width=900, height=650, top=400, left=350'); return false;">– 2nd QUARTER</a><br>
+      <a href="/data/STNAnnualReport31Dec2015stampedrecvedbySEC.pdf" onclick="open(this.href, this.target, 'width=900, height=650, top=400, left=350'); return false;">– 3rd QUARTER</a><br>
+      <a href="/data/STNAnnualReport31Dec2015stampedrecvedbySEC.pdf" onclick="open(this.href, this.target, 'width=900, height=650, top=400, left=350'); return false;">– 4th QUARTER</a><br>
+    </div>
+  </div>
+</div>
+
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+<footer class="footer-distributed">
+
+			<div class="footer-center">
+				<p class="footer-company-about">
+				<span>	Copyright &copy; 1963-<script>document.write(new Date().getFullYear())</script> Steniel Manufacturing Corporation <br> All Rights Reserved </span>
+				<div class="footer-icons">
+					<!-- <a href="#"><i class="fa fa-facebook"></i></a>
+					<a href="#"><i class="fa fa-twitter"></i></a>
+					<a href="#"><i class="fa fa-instagram"></i></a>
+					<a href="#"><i class="fa fa-linkedin"></i></a>
+					<a href="#"><i class="fa fa-youtube"></i></a> -->
+				</div>
+			</div>
+	</footer>
+
+</body>
+</html>
